@@ -1,0 +1,3 @@
+// Add new packages on 17Apr2018
+meteor npm install --save react react-dom
+meteor add session
