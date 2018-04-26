@@ -1,3 +1,11 @@
+// Create app
+meteor create visionelectronics
+
 // Add new packages on 17Apr2018
 meteor npm install --save react react-dom
 meteor add session
+meteor add less
+
+// Add new packages
+meteor add accounts-password
+meteor npm install --save bcrypt

@@ -118,7 +118,7 @@ class CoolFactsFeatures extends Component {
                         <div className="col-12 col-md-3 col-lg-3">
                             <div className="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.2s">
                                 <div className="counter-area">
-                                    <h3><span class="counter">90</span></h3>
+                                    <h3><span className="counter">90</span></h3>
                                 </div>
                                 <div className="cool-facts-content">
                                     <i className="ion-arrow-down-a"></i>

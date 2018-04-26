@@ -1,13 +1,3 @@
-/* --------------------------
-:: Template Name: Colorlib App - App Landing Page 
-:: Template Author: Colorlib
-:: Template Author URI: https://colorlib.com/
-:: Description: Colorlib is a One Page based App Landing Template. It's very clean, creative & beautiful. It's super     responsive & ultra light.
-:: Tags: Colorlib, App Landing, Apps, Responsive App Landing, Bootstrap 4, Free Theme, Free HTML Template, HTML5 Template etc.
-:: Version: v1.0
-:: Created: 11/03/2017
--------------------------- */
-
 /* --- [Master Stylesheet] ----
 :: 1.0 Base CSS Start
 :: 2.0 Header Area CSS
@@ -26,6 +16,14 @@
 -------------------------- */
 
 /* --------------------------
+:: Variables
+-------------------------- */
+@black: #000000;
+@white: #ffffff;
+@blue-navy: #000080;
+@icon-color: #fb397d;
+
+/* --------------------------
 :: 1.0 Base CSS Start
 -------------------------- */
 
@@ -36,7 +34,7 @@
 
 body {
     font-family: 'Cabin', sans-serif;
-    background-color: #fff;
+    background-color: @white;
 }
 
 h1,
@@ -47,7 +45,7 @@ h5,
 h6 {
     font-family: 'Cabin', sans-serif;
     font-weight: 400;
-    color: #000;
+    color: @black;
     line-height: 1.2;
 }
 
@@ -189,8 +187,8 @@ ol {
     font-size: 24px;
     right: 30px;
     width: 50px;
-    background-color: #fb397d;
-    color: #fff;
+    background-color: @icon-color;
+    color: @white;
     text-align: center;
     height: 50px;
     line-height: 50px;
@@ -223,7 +221,7 @@ p {
 
 .section-heading > h2 {
     font-weight: 300;
-    color: #5b32b4;
+    color: @blue-navy;
     font-size: 48px;
     margin: 0;
 }
@@ -237,7 +235,7 @@ p {
 .line-shape {
     width: 80px;
     height: 2px;
-    background-color: #fb397d;
+    background-color: @icon-color;
     margin-top: 15px;
 }
 
@@ -262,7 +260,7 @@ p {
 
 #preloader {
     overflow: hidden;
-    background-color: #fff;
+    background-color: @white;
     height: 100%;
     left: 0;
     position: fixed;
@@ -275,7 +273,7 @@ p {
     -webkit-animation: 2000ms linear 0s normal none infinite running colorlib-load;
     animation: 2000ms linear 0s normal none infinite running colorlib-load;
     background: transparent none repeat scroll 0 0;
-    border-color: #dddddd #dddddd #fb397d;
+    border-color: #dddddd #dddddd @icon-color;
     border-radius: 50%;
     border-style: solid;
     border-width: 2px;
@@ -325,7 +323,7 @@ p {
 .menu_area .navbar-brand {
     font-size: 72px;
     font-weight: 700;
-    color: #fff;
+    color: @white;
     margin: 0;
     line-height: 1;
     padding: 0;
@@ -334,7 +332,7 @@ p {
 
 .menu_area .navbar-brand:hover,
 .menu_area .navbar-brand:focus {
-    color: #fff;
+    color: @white;
 }
 
 
@@ -344,7 +342,7 @@ p {
 }
 
 .menu_area #nav .nav-link {
-    color: #fff;
+    color: @white;
     display: block;
     font-size: 16px;
     font-weight: 500;
@@ -357,7 +355,7 @@ p {
 
 
 .menu_area nav ul li > a:hover {
-    color: #fb397d;
+    color: @icon-color;
 }
 
 .sing-up-button {
@@ -365,7 +363,7 @@ p {
 }
 
 .sing-up-button > a {
-    color: #fff;
+    color: @white;
     font-weight: 500;
     display: inline-block;
     border: 2px solid #a883e9;
@@ -377,8 +375,8 @@ p {
 }
 
 .sing-up-button > a:hover {
-    background: #fb397d;
-    color: #fff;
+    background: @icon-color;
+    color: @white;
     border-color: transparent;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -388,7 +386,7 @@ p {
 /* stcicky css */
 
 .header_area.sticky {
-    background-color: #884bdf;
+    background-color: @blue-navy;
     -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     height: 70px;
@@ -427,7 +425,7 @@ p {
     width: 100%;
     left: 0;
     height: 2px;
-    background-color: #fff;
+    background-color: @white;
     content: '';
     bottom: 0;
     z-index: 2;
@@ -448,7 +446,7 @@ p {
 
 .wellcome-heading > h2 {
     font-size: 100px;
-    color: #ffffff;
+    color: @white;
     font-weight: 700;
     position: relative;
     z-index: 3;
@@ -490,8 +488,8 @@ p {
 }
 
 .get-start-area .submit {
-    background-color: #fb397d;
-    color: #fff;
+    background-color: @icon-color;
+    color: @white;
     font-weight: 500;
     display: inline-block;
     border: none;
@@ -505,14 +503,14 @@ p {
 
 .get-start-area .submit:hover {
     background: #6f52e5;
-    color: #fff;
+    color: @white;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
     transition-duration: 500ms;
 }
 
 .wellcome-heading > p {
-    color: #fff;
+    color: @white;
 }
 
 .wellcome-heading > h3 {
@@ -522,7 +520,7 @@ p {
     font-weight: 900;
     left: -12px;
     z-index: -1;
-    color: #fff;
+    color: @white;
     opacity: .1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
 }
@@ -537,12 +535,12 @@ p {
 
 .single-icon > i {
     font-size: 36px;
-    color: #fb397d;
+    color: @icon-color;
 }
 
 .single-special > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: @blue-navy;
 }
 
 .single-icon {
@@ -551,7 +549,7 @@ p {
 
 .single-special > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: @blue-navy;
     margin-bottom: 15px;
 }
 
@@ -566,7 +564,7 @@ p {
 }
 
 .special_description_content > h2 {
-    color: #5b32b4;
+    color: @blue-navy;
     font-size: 48px;
     margin-bottom: 30px;
 }
@@ -612,7 +610,7 @@ p {
 .app-download-btn.active a,
 .app-download-btn a:hover {
     border-color: transparent;
-    background-color: #fb397d;
+    background-color: @icon-color;
 }
 
 .app-download-btn a i {
@@ -645,7 +643,7 @@ p {
 .app-download-btn.active a i,
 .app-download-btn.active a p,
 .app-download-btn a:hover p {
-    color: #fff;
+    color: @white;
 }
 
 /* --------------------------
@@ -661,7 +659,7 @@ p {
 }
 
 .single-feature > i {
-    color: #fb397d;
+    color: @icon-color;
     font-size: 30px;
     display: inline-block;
     float: left;
@@ -670,7 +668,7 @@ p {
 
 .single-feature > h5 {
     font-size: 22px;
-    color: #5b32b4;
+    color: @blue-navy;
 }
 
 .single-feature > p {
@@ -686,7 +684,7 @@ p {
     z-index: 1;
     background-position: center center;
     background-size: cover;
-    border: 20px solid #fff;
+    border: 20px solid @white;
     border-radius: 20px;
     height: 650px;
     -webkit-box-shadow: 0 10px 50px rgba(0, 0, 0, 0.08);
@@ -710,8 +708,8 @@ p {
 .video-area .video-play-btn a {
     width: 80px;
     height: 80px;
-    background-color: #fb397d;
-    color: #fff;
+    background-color: @icon-color;
+    color: @white;
     text-align: center;
     display: block;
     font-size: 36px;
@@ -729,7 +727,7 @@ p {
 
 .video-area .video-play-btn a:hover {
     background-color: #a865e1;
-    color: #fff;
+    color: @white;
 }
 
 /* --------------------------
@@ -757,12 +755,12 @@ p {
     right: 0;
     width: 100%;
     height: 100px;
-    background-color: #fff;
+    background-color: @white;
     content: ''
 }
 
 .cool-facts-content > i {
-    color: #ffffff;
+    color: @white;
     font-size: 36px;
 }
 
@@ -773,7 +771,7 @@ p {
 }
 
 .counter-area > h3 {
-    color: #ffffff;
+    color: @white;
     font-size: 60px;
     margin-bottom: 0;
     line-height: 1;
@@ -781,7 +779,7 @@ p {
 
 .cool-facts-content > p {
     font-size: 18px;
-    color: #ffffff;
+    color: @white;
     margin-bottom: 0;
 }
 
@@ -820,7 +818,7 @@ p {
 }
 
 .app-screenshots-area .owl-dot.active {
-    background-color: #fb397d;
+    background-color: @icon-color;
     border: transparent;
 }
 
@@ -839,7 +837,7 @@ p {
 }
 
 .single-price-plan {
-    background: #ffffff;
+    background: @white;
     border: 1px solid #ebebeb;
     border-radius: 30px 30px 30px 0;
     margin-bottom: 30px;
@@ -851,13 +849,13 @@ p {
 }
 
 .single-price-plan .package-plan > h5 {
-    color: #5b32b4;
+    color: @blue-navy;
     font-size: 18px;
 }
 
 
 .single-price-plan .package-plan .ca-price h4 {
-    color: #fb397d;
+    color: @icon-color;
     font-size: 48px;
     position: relative;
     z-index: 1;
@@ -867,14 +865,14 @@ p {
 
 .single-price-plan .package-plan .ca-price span {
     font-size: 18px;
-    color: #fb397d;
+    color: @icon-color;
 }
 
 .single-price-plan .plan-button > a {
     background: #726a84;
     padding: 10px 0;
     border-bottom-right-radius: 30px;
-    color: #ffffff;
+    color: @white;
     font-size: 16px;
     font-weight: 500;
     display: block;
@@ -904,7 +902,7 @@ p {
 .single-price-plan.active .package-plan .ca-price > span,
 .single-price-plan.active .package-plan > h5,
 .single-price-plan.active .plan-button > a {
-    color: #fff;
+    color: @white;
 }
 
 /* --------------------------
@@ -912,7 +910,7 @@ p {
 -------------------------- */
 
 .clients-feedback-area .client-name > h5 {
-    color: #5b32b4;
+    color: @blue-navy;
     font-size: 22px;
     margin-top: 5px;
 }
@@ -956,15 +954,15 @@ p {
     height: 12px;
     text-indent: -999999999999999999999999px;
     border: 3px solid #a49fba;
-    background-color: #fff;
+    background-color: @white;
     border-radius: 50%;
     margin: 5.5px;
     outline: none;
 }
 
 .clients-feedback-area .slick-dots li.slick-active button {
-    background-color: #fb397d;
-    border-color: #fb397d;
+    background-color: @icon-color;
+    border-color: @icon-color;
 }
 
 .clients-feedback-area .slick-slide.client-thumbnail {
@@ -989,7 +987,7 @@ p {
     width: 80px !important;
     height: 80px !important;
     border-radius: 50%;
-    border: 5px solid #fff;
+    border: 5px solid @white;
     -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -1002,7 +1000,7 @@ p {
 .clients-feedback-area .slick-arrow {
     position: absolute;
     width: 30px;
-    background-color: #fff;
+    background-color: @white;
     height: 100%;
     text-align: center;
     font-size: 24px;
@@ -1034,30 +1032,30 @@ p {
 }
 
 .membership-description > h2 {
-    color: #ffffff;
+    color: @white;
     font-size: 36px;
 }
 
 .membership-description > p {
-    color: #ffffff;
+    color: @white;
     margin-bottom: 0;
 }
 
 .get-started-button > a {
-    background: #ffffff;
+    background: @white;
     height: 45px;
     min-width: 155px;
     display: inline-block;
     text-align: center;
     line-height: 45px;
-    color: #fb397d;
+    color: @icon-color;
     font-weight: 500;
     border-radius: 23px 23px 23px 0;
 }
 
 .get-started-button > a:hover {
-    background: #5b32b4;
-    color: #fff;
+    background: @blue-navy;
+    color: @white;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
     transition-duration: 500ms;
@@ -1084,7 +1082,7 @@ p {
 
 .member-text > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: @blue-navy;
 }
 
 .member-text > p {
@@ -1132,7 +1130,7 @@ p {
 
 .team-social-icon > a {
     font-size: 14px;
-    color: #fff;
+    color: @white;
     background: #9a81d7;
     height: 40px;
     width: 40px;
@@ -1161,7 +1159,7 @@ p {
 .address-text > p > span,
 .phone-text > p > span,
 .email-text > p > span {
-    color: #5b32b4;
+    color: @blue-navy;
 }
 
 .footer-contact-area .line-shape {
@@ -1193,17 +1191,17 @@ p {
 }
 
 .btn.submit-btn {
-    background: #fb397d;
+    background: @icon-color;
     height: 48px;
     min-width: 185px;
-    color: #ffffff;
+    color: @white;
     font-weight: 500;
     border-radius: 22px 25px 22px 0;
 }
 
 .btn.submit-btn:hover {
-    background: #5b32b4;
-    color: #fff;
+    background: @blue-navy;
+    color: @white;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
     transition-duration: 500ms;
@@ -1222,7 +1220,7 @@ p {
 -------------------------- */
 
 .footer-text > h2 {
-    color: #5b32b4;
+    color: @blue-navy;
     font-size: 72px;
     font-weight: 700;
 }
@@ -1230,7 +1228,7 @@ p {
 .footer-social-icon > a > i {
     background: #9b69e4;
     font-size: 14px;
-    color: #ffffff;
+    color: @white;
     height: 40px;
     width: 40px;
     line-height: 40px;
@@ -1240,8 +1238,8 @@ p {
 }
 
 .footer-social-icon > a > i:hover {
-    background: #fb397d;
-    color: #fff;
+    background: @icon-color;
+    color: @white;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
     transition-duration: 500ms;
@@ -1267,7 +1265,7 @@ p {
 }
 
 .footer-social-icon > a .active {
-    background: #fb397d;
+    background: @icon-color;
 }
 
 .footer-menu ul li:last-child a {

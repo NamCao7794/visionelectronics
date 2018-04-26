@@ -6,6 +6,7 @@ import Features from "../components/landing/Features";
 import Team from "../components/landing/Team";
 import Contact from "../components/landing/Contact";
 import Footer from "../components/landing/Footer";
+import Feedback from "../components/landing/Feedback";
 
 export default class Landing extends Component {
     render() {
@@ -15,6 +16,7 @@ export default class Landing extends Component {
                 <Welcome/>
                 <About/>
                 <Features/>
+                {/*<Feedback/>*/}
                 <Team/>
                 <Contact/>
                 <Footer/>

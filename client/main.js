@@ -6,7 +6,7 @@ import Landing from "../imports/ui/pages/Landing";
 
 Meteor.startup(() => {
     // Landing page
-    $.getScript('/js/landing/jquery-2.2.4.min.js', function(){});
+    $.getScript('/js/landing/jquery-3.3.1.min.js', function(){});
     $.getScript('/js/landing/popper.min.js', function(){});
     $.getScript('/js/landing/bootstrap.min.js', function(){});
     $.getScript('/js/landing/plugins.js', function(){
