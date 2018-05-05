@@ -84,7 +84,7 @@
     // :: 4.0 ScrollUp Active Code
     if ($.fn.scrollUp) {
         $.scrollUp({
-            scrollSpeed: 1500,
+            scrollSpeed: 1000,
             scrollText: '<i class="fa fa-angle-up"></i>'
         });
     }
@@ -101,7 +101,7 @@
     if ($.fn.onePageNav) {
         $('#nav').onePageNav({
             currentClass: 'active',
-            scrollSpeed: 2000,
+            scrollSpeed: 500,
             easing: 'easeOutQuad'
         });
     }

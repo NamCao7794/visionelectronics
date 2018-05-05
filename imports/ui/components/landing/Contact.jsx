@@ -32,12 +32,12 @@ export default class Contact extends Component {
                                         <div className="row">
                                             <div className="col-md-12">
                                                 <div className="form-group">
-                                                    <input type="text" className="form-control" name="name" id="name" placeholder="Họ và tên" required />
+                                                    <input type="text" className="form-control" name="name" id="name" placeholder="Họ và tên" autoComplete="off" required />
                                                 </div>
                                             </div>
                                             <div className="col-md-12">
                                                 <div className="form-group">
-                                                    <input type="email" className="form-control" name="email" id="email" placeholder="Email" required />
+                                                    <input type="email" className="form-control" name="email" id="email" placeholder="Email" autoComplete="off" required />
                                                 </div>
                                             </div>
                                             <div className="col-12">

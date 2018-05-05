@@ -21,7 +21,8 @@
 @black: #000000;
 @white: #ffffff;
 @blue-navy: #000080;
-@icon-color: #fb397d;
+@icon-color: #DE2127;
+@footer-background: #f1f1f1;
 
 /* --------------------------
 :: 1.0 Base CSS Start
@@ -393,19 +394,27 @@ p {
     position: fixed;
     top: 0;
     z-index: 99;
-}
 
-.header_area.sticky .menu_area .navbar-brand {
-    font-size: 50px;
-}
+    .menu_area .navbar-brand {
+        font-size: 50px;
+    }
 
-.header_area.sticky .menu_area #nav .nav-link {
-    padding: 23px 15px;
-}
-.header_area.sticky .navbar {
-    padding: 0;
-}
+    .menu_area #nav .nav-link {
+        padding: 23px 15px;
+    }
 
+    .navbar {
+        padding: 0;
+    }
+
+    .menu_area #nav li.nav-item.active {
+        background: @white;
+
+        .nav-link{
+            color: @blue-navy;
+        }
+    }
+}
 
 /* --------------------------
 :: 3.0 Wellcome Area CSS
@@ -1208,7 +1217,7 @@ p {
 }
 
 .footer-contact-area {
-    background: #f5f9fc;
+    background: @footer-background;
 }
 
 .footer-text > p {

@@ -4,7 +4,7 @@ export default class Feedback extends Component {
     render() {
         return (
             // <!-- ***** Client Feedback Area Start ***** -->
-            <section className="clients-feedback-area section_padding_100 clearfix" id="testimonials">
+            <section className="clients-feedback-area bg-white section_padding_100 clearfix" id="testimonials">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-12 col-md-10">
