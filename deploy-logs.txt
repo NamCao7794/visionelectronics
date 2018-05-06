@@ -9,3 +9,6 @@ meteor add less
 // Add new packages
 meteor add accounts-password
 meteor npm install --save bcrypt
+
+// Add new packages 05May2018
+meteor npm install --save react-router history

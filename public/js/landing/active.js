@@ -122,6 +122,11 @@
         $.preventDefault()
     });
 
+    $('a.nav-link').click(function () {
+        $('.navbar-toggler').click();
+    });
+
+
     var $window = $(window);
 
     if ($window.width() > 767) {

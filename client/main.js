@@ -1,8 +1,8 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { render } from 'react-dom';
+import {Meteor} from 'meteor/meteor';
+import {render} from 'react-dom';
 
-import Landing from "../imports/ui/pages/Landing";
+import {renderRoutes} from "../imports/startup/client/routes";
 
 Meteor.startup(() => {
     // Landing page
@@ -15,5 +15,5 @@ Meteor.startup(() => {
         $.getScript('/js/landing/active.js', function(){});
     });
 
-    render(<Landing />, document.getElementById('render-target'));
+    render(renderRoutes(), document.getElementById('render-target'));
 });
