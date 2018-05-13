@@ -26,7 +26,7 @@ export default class Header extends Component {
                                             <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
                                         </ul>
                                         <div className="sing-up-button d-lg-none">
-                                            <a href="">Login</a>
+                                            <a href="/login">Login</a>
                                         </div>
                                     </div>
                                 </nav>
@@ -34,7 +34,7 @@ export default class Header extends Component {
                         </div>
                         <div className="col-12 col-lg-2">
                             <div className="sing-up-button d-none d-lg-block">
-                                <a href="">Login</a>
+                                <a href="/login">Login</a>
                             </div>
                         </div>
                     </div>

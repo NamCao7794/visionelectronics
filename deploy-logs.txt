@@ -1,6 +1,9 @@
 // Create app
 meteor create visionelectronics
 
+// Run app on server
+sudo meteor run --allow-superuser --port 80
+
 // Add new packages on 17Apr2018
 meteor npm install --save react react-dom
 meteor add session
@@ -12,3 +15,6 @@ meteor npm install --save bcrypt
 
 // Add new packages 05May2018
 meteor npm install --save react-router history
+
+// Add new packages 10May2018
+meteor add react-meteor-data
