@@ -10,12 +10,12 @@ export default class Register extends Component {
         var user = {};
         user.fullNameVar = ReactDOM.findDOMNode(this.refs.fullNameRegister).value.trim();
         user.userNamedVar = ReactDOM.findDOMNode(this.refs.userNameRegister).value.trim();
-        user.emailVar = ReactDOM.findDOMNode(this.refs.emailRegister).value.trim();
+        user.emailVar = ReactDOM.findDOMNode(this.refs.emailAddressRegister).value.trim();
         user.passwordVar = ReactDOM.findDOMNode(this.refs.passwordRegister).value.trim();
         user.agreeTermVar = ReactDOM.findDOMNode(this.refs.agreeTerm).checked;
 
         // Create new user
-        if (user.agreeTermVar) {
+        if (user.agreeTermVar && false) {
             Meteor.call('createNewUser', user, function (err) {
                 if (err) {
                     console.log('something went wrong :(');
@@ -29,7 +29,7 @@ export default class Register extends Component {
         // Clear form
         ReactDOM.findDOMNode(this.refs.fullNameRegister).value = '';
         ReactDOM.findDOMNode(this.refs.userNameRegister).value = '';
-        ReactDOM.findDOMNode(this.refs.emailRegister).value = '';
+        ReactDOM.findDOMNode(this.refs.emailAddressRegister).value = '';
         ReactDOM.findDOMNode(this.refs.passwordRegister).value = '';
     }
 
@@ -41,28 +41,32 @@ export default class Register extends Component {
                         <div className="row justify-content-center">
                             <div className="col-lg-4">
                                 <div className="login-content card">
-                                    <div className="login-form">
+                                    <div className="login-form form-validation">
                                         <h4>Register</h4>
-                                        <form onSubmit={this.handleSubmit.bind(this)}>
+                                        <form className="authRegisterForm" onSubmit={this.handleSubmit.bind(this)}>
                                             <div className="form-group">
-                                                <label>Full Name</label>
-                                                <input type="text" className="form-control" ref="fullNameRegister" required={"true"}/>
+                                                <label>Full Name <span className="text-danger">*</span></label>
+                                                <input type="text" className="form-control" ref="fullNameRegister" name="fullNameRegister"/>
                                             </div>
                                             <div className="form-group">
-                                                <label>User Name</label>
-                                                <input type="text" className="form-control" ref="userNameRegister" required={"true"}/>
+                                                <label>User Name <span className="text-danger">*</span></label>
+                                                <input type="text" className="form-control" ref="userNameRegister" name="userNameRegister"/>
                                             </div>
                                             <div className="form-group">
-                                                <label>Email address</label>
-                                                <input type="email" className="form-control" ref="emailRegister" required={"true"}/>
+                                                <label>Email address <span className="text-danger">*</span></label>
+                                                <input type="email" className="form-control" ref="emailAddressRegister" name="emailAddressRegister"/>
                                             </div>
                                             <div className="form-group">
-                                                <label>Password</label>
-                                                <input type="password" className="form-control" ref="passwordRegister" required={"true"}/>
+                                                <label>Password <span className="text-danger">*</span></label>
+                                                <input type="password" className="form-control" ref="passwordRegister" id="passwordRegister" name="passwordRegister"/>
+                                            </div>
+                                            <div className="form-group">
+                                                <label>Confirm Password <span className="text-danger">*</span></label>
+                                                <input type="password" className="form-control" ref="confirmPasswordRegister" id="confirmPasswordRegister" name="confirmPasswordRegister"/>
                                             </div>
                                             <div className="checkbox">
                                                 <label>
-                                                    <input type="checkbox" ref="agreeTerm" required={"true"}/> Agree the terms and policy
+                                                    <input type="checkbox" ref="agreeTerm" name="agreeTerm"  required={"true"}/> Agree the terms and policy
                                                 </label>
                                             </div>
                                             <button type="submit" className="btn btn-primary btn-flat m-b-30 m-t-30">Register

@@ -1,6 +1,9 @@
 #main-wrapper {
     width: 100%;
 }
+.hidden {
+    display: none;
+}
 .page-wrapper {
     background: #fafafa;
     padding-bottom: 60px;
@@ -2485,7 +2488,22 @@ label {
     margin-left: 0;
     margin-right: 0;
 }
-
+.dropdown-menu li {
+    font-size: 14px;
+    padding: 5px 15px;
+}
+.is-invalid .form-control {
+    border-color: #de2127;
+}
+.invalid-feedback {
+    color: #de2127;
+    display: none;
+    margin-top: 0.25rem;
+}
+.is-invalid .invalid-feedback,
+.is-invalid .invalid-tooltip {
+    display: block;
+}
 /**
  * LOGIN
  */

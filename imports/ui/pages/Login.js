@@ -25,16 +25,16 @@ export default class Login extends Component {
                         <div className="row justify-content-center">
                             <div className="col-lg-4">
                                 <div className="login-content card">
-                                    <div className="login-form">
+                                    <div className="login-form form-validation">
                                         <h4>Login</h4>
-                                        <form onSubmit={this.handleSubmit.bind(this)}>
+                                        <form className="authLoginForm" onSubmit={this.handleSubmit.bind(this)}>
                                             <div className="form-group">
                                                 <label>Email address</label>
-                                                <input type="email" className="form-control" ref="emailLogin"/>
+                                                <input type="email" className="form-control" ref="emailLogin" name="emailLogin"/>
                                             </div>
                                             <div className="form-group">
                                                 <label>Password</label>
-                                                <input type="password" className="form-control" ref="passwordLogin"/>
+                                                <input type="password" className="form-control" ref="passwordLogin" name="passwordLogin"/>
                                             </div>
                                             <div className="checkbox">
                                                 <label>
