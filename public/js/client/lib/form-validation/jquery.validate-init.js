@@ -1,7 +1,5 @@
-
-var form_validation = function() {
-    var e = function() {
-        console.log('validate');
+const form_validation = function() {
+    const validate = function() {
         $(".authRegisterForm").validate({
             ignore: [],
             errorClass: "invalid-feedback animated fadeInDown",
@@ -36,6 +34,9 @@ var form_validation = function() {
                     required: true,
                     minlength: 6,
                     equalTo: "#passwordRegister"
+                },
+                "agreeTerm": {
+                    required: true,
                 }
             },
             messages: {
@@ -58,6 +59,9 @@ var form_validation = function() {
                     required: "Please provide a password",
                     minlength: "Your password must be at least 6 characters long",
                     equalTo: "Please enter the same password as above"
+                },
+                "agreeTerm": {
+                    required: "Please accept the terms and policy",
                 }
             }
         });
@@ -97,9 +101,7 @@ var form_validation = function() {
     };
     return {
         init: function() {
-            e(), $(".js-select2").on("change", function() {
-                $(this).valid()
-            })
+            validate();
         }
     }
 }();

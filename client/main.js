@@ -3,6 +3,10 @@ import {Meteor} from 'meteor/meteor';
 import {Tracker} from 'meteor/tracker'
 import {render} from 'react-dom';
 
+// Import React sAlert component
+import 'react-s-alert/dist/s-alert-default.css';
+import 'react-s-alert/dist/s-alert-css-effects/stackslide.css';
+
 import {onAuthChange, renderRoutes} from "../imports/startup/client/routes";
 
 Tracker.autorun(function () {
@@ -13,6 +17,8 @@ Tracker.autorun(function () {
 Meteor.startup(() => {
     render(renderRoutes(), document.getElementById('render-target'));
 
+    $.ajaxSetup({async: false});
+
     /* All Jquery */
     $.getScript('/js/landing/jquery-3.3.1.min.js');
     /* Bootstrap tether Core JavaScript */
@@ -20,11 +26,10 @@ Meteor.startup(() => {
     $.getScript('/js/landing/bootstrap.min.js');
 
     /* Script on Landing page */
-    $.getScript('/js/landing/plugins.js', function(){
-        $.getScript('/js/landing/slick.min.js');
-        $.getScript('/js/landing/footer-reveal.min.js');
-        $.getScript('/js/landing/active.js');
-    });
+    $.getScript('/js/landing/plugins.js');
+    $.getScript('/js/landing/slick.min.js');
+    $.getScript('/js/landing/footer-reveal.min.js');
+    $.getScript('/js/landing/active.js');
 
     /* Script on Client page */
     $.getScript('/js/client/jquery.slimscroll.js');
@@ -33,4 +38,6 @@ Meteor.startup(() => {
     $.getScript('/js/client/lib/form-validation/jquery.validate.min.js');
     $.getScript('/js/client/lib/form-validation/jquery.validate-init.js');
     $.getScript('/js/client/custom.min.js');
+
+    $.ajaxSetup({async: true});
 });

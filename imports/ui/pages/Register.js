@@ -1,41 +1,50 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { withTracker } from 'meteor/react-meteor-data';
+import {withTracker} from 'meteor/react-meteor-data';
+import Alert from 'react-s-alert';
 
 export default class Register extends Component {
+    checkPassword(pass, passCorfirm) {
+        return !pass.localeCompare(passCorfirm);
+    }
+
     handleSubmit(event) {
         event.preventDefault();
 
         // Find the text field via the React ref
-        var user = {};
+        let user = {};
         user.fullNameVar = ReactDOM.findDOMNode(this.refs.fullNameRegister).value.trim();
         user.userNamedVar = ReactDOM.findDOMNode(this.refs.userNameRegister).value.trim();
         user.emailVar = ReactDOM.findDOMNode(this.refs.emailAddressRegister).value.trim();
         user.passwordVar = ReactDOM.findDOMNode(this.refs.passwordRegister).value.trim();
+        user.confirmPasswordVar = ReactDOM.findDOMNode(this.refs.confirmPasswordRegister).value.trim();
         user.agreeTermVar = ReactDOM.findDOMNode(this.refs.agreeTerm).checked;
 
+        let isMatchPassword = this.checkPassword(user.passwordVar, user.confirmPasswordVar);
+
         // Create new user
-        if (user.agreeTermVar && false) {
-            Meteor.call('createNewUser', user, function (err) {
-                if (err) {
-                    console.log('something went wrong :(');
+        if (user.agreeTermVar && isMatchPassword) {
+            Meteor.call('createNewUser', user, function (error) {
+                if (error) {
+                    Alert.error(error.reason, {
+                        effect: 'stackslide',
+                        position: 'top',
+                        timeout: 2500,
+                        onRouteClose: false,
+                        stack: false,
+                    });
                 }
                 else {
-                    console.log('success');
+                    $(location).attr("href", '/dashboard/');
                 }
             });
         }
-
-        // Clear form
-        ReactDOM.findDOMNode(this.refs.fullNameRegister).value = '';
-        ReactDOM.findDOMNode(this.refs.userNameRegister).value = '';
-        ReactDOM.findDOMNode(this.refs.emailAddressRegister).value = '';
-        ReactDOM.findDOMNode(this.refs.passwordRegister).value = '';
     }
 
     render() {
         return (
             <div id="main-wrapper">
+                <Alert/>
                 <div className="unix-login">
                     <div className="container-fluid">
                         <div className="row justify-content-center">
@@ -64,10 +73,8 @@ export default class Register extends Component {
                                                 <label>Confirm Password <span className="text-danger">*</span></label>
                                                 <input type="password" className="form-control" ref="confirmPasswordRegister" id="confirmPasswordRegister" name="confirmPasswordRegister"/>
                                             </div>
-                                            <div className="checkbox">
-                                                <label>
-                                                    <input type="checkbox" ref="agreeTerm" name="agreeTerm"  required={"true"}/> Agree the terms and policy
-                                                </label>
+                                            <div className="form-group checkbox">
+                                                <input type="checkbox" ref="agreeTerm" name="agreeTerm" required={"true"}/> Agree the terms and policy
                                             </div>
                                             <button type="submit" className="btn btn-primary btn-flat m-b-30 m-t-30">Register
                                             </button>

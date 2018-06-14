@@ -15,14 +15,14 @@ const browserHistory = createBrowserHistory();
 const unauthenticatedPages = ['/', '/login', '/signup', '/forgot-password'];
 const authenticatedPages = ['/dashboard'];
 
-const publicPage = function  () {
+const publicPage = function () {
     if (Meteor.userId()) {
         history.replace('/link');
     }
 };
 
-const privatePage = function  () {
-    if(! Meteor.userId()) {
+const privatePage = function () {
+    if (!Meteor.userId()) {
         history.replace('/');
     }
 };
@@ -45,7 +45,7 @@ export const renderRoutes = () => (
             <Route exact path="/login" component={Login} onEnter={publicPage}/>
             <Route exact path="/register" component={Register} onEnter={publicPage}/>
             <Route exact path="/forgot-password" component={ForgotPassword} onEnter={publicPage}/>
-            <Route exact path="/dashboard" component={ClientDashboard} onEnter={publicPage}/>
+            <Route exact path="/dashboard" component={ClientDashboard} onEnter={privatePage}/>
             <Route component={NotFound}/>
         </Switch>
     </Router>

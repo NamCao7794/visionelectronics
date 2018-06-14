@@ -1,25 +1,36 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { withTracker } from 'meteor/react-meteor-data';
+import {withTracker} from 'meteor/react-meteor-data';
+import Alert from 'react-s-alert';
 
 export default class Login extends Component {
     handleSubmit(event) {
         event.preventDefault();
+
         // Find the text field via the React ref
-        const emailLogin = ReactDOM.findDOMNode(this.refs.emailLogin).value.trim();
-        const passwordLogin = ReactDOM.findDOMNode(this.refs.passwordLogin).value.trim();
-        // Tasks.insert({
-        //     text,
-        //     createdAt: new Date(), // current time
-        // });
-        // Clear form
-        ReactDOM.findDOMNode(this.refs.emailLogin).value = '';
-        ReactDOM.findDOMNode(this.refs.passwordLogin).value = '';
+        let emailLogin = ReactDOM.findDOMNode(this.refs.emailLogin).value.trim();
+        let passwordLogin = ReactDOM.findDOMNode(this.refs.passwordLogin).value.trim();
+
+        Meteor.loginWithPassword(emailLogin, passwordLogin, function (error) {
+            if (error) {
+                Alert.error(error.reason, {
+                    effect: 'stackslide',
+                    position: 'top',
+                    timeout: 2500,
+                    onRouteClose: false,
+                    stack: false,
+                });
+            }
+            else {
+                $(location).attr("href", '/dashboard/');
+            }
+        });
     }
 
     render() {
         return (
             <div id="main-wrapper">
+                <Alert/>
                 <div className="unix-login">
                     <div className="container-fluid">
                         <div className="row justify-content-center">
